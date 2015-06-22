@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="MyApp" ng-controller="myController">
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/master.css" rel="stylesheet">
+  <script  src="js/angular.min.js"></script>
+  <script src="js/angular-resource.js"></script>
+  <script src="js/angular-route.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/angularTranslationService.js"></script>
+</head>
+<body >
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand page-scroll" href="#/"><span>Angular Example</span></a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="#/" ><i class="fa fa-home"></i> {{translation.HOME }}</a> </li>
+        <li> <a href="#about"><i class="fa fa-shield"></i> {{translation.ABOUT }}</a> </li>
+        <li> <a href="#contact"><i class="fa fa-comment"></i> {{translation.CONTACT }}</a> </li>
+        <li>
+          <select class="form-control" ng-change="translate()" ng-model="selectedLanguage">
+            <option value="en">English</option>
+            <option value="no">Norsk</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<h4>Selected language: <strong>{{selectedLanguage}}</strong></h4>
+<h4>Translated word goes here :   {{translation.HELLO_WORLD }} </h4>
+<div ng-view></div>
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
